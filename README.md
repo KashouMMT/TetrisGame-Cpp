@@ -1,2 +1,2 @@
 # TetrisGame-Cpp
-A Personal Project of Tetris game using C++ programming language with command-line interface (CMD) as the output.
+My First Personal pure C++ Project of making a Tetris game using C++ on a cmd.
