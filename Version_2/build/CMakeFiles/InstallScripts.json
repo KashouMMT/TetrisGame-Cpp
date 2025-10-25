@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/Work_Folder/Cpp_Project/TetrisGame-Cpp/Version_2/build/cmake_install.cmake",
+		"D:/Work_Folder/Cpp_Project/TetrisGame-Cpp/Version_2/build/lib/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

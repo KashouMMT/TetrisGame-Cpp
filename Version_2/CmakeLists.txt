@@ -1,0 +1,14 @@
+# Minimum version of CMake required
+cmake_minimum_required(VERSION 3.15)
+
+# Define the project name and the programming language
+project(TetrisGame C)
+
+# Add the library subdirectory (this points to /lib)
+add_subdirectory(lib)
+
+# Create an executable from main.c
+add_executable(main main.c)
+
+# Link the arraylist library to your executable
+target_link_libraries(main PRIVATE tetrislib)
