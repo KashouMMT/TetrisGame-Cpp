@@ -1,6 +1,0 @@
-D:/Work_Folder/Cpp_Project/TetrisGame-Cpp/Version_2/build/CMakeFiles/main.dir
-D:/Work_Folder/Cpp_Project/TetrisGame-Cpp/Version_2/build/CMakeFiles/edit_cache.dir
-D:/Work_Folder/Cpp_Project/TetrisGame-Cpp/Version_2/build/CMakeFiles/rebuild_cache.dir
-D:/Work_Folder/Cpp_Project/TetrisGame-Cpp/Version_2/build/lib/CMakeFiles/tetrislib.dir
-D:/Work_Folder/Cpp_Project/TetrisGame-Cpp/Version_2/build/lib/CMakeFiles/edit_cache.dir
-D:/Work_Folder/Cpp_Project/TetrisGame-Cpp/Version_2/build/lib/CMakeFiles/rebuild_cache.dir
