@@ -1,31 +1,51 @@
 #include<stdio.h>
+#include<time.h>
+#include<conio.h>
+
+#ifdef _WIN32
+  #include <windows.h>
+  #define sleep_ms(ms) Sleep(ms)
+#else
+  #include <unistd.h>
+  #define sleep_ms(ms) usleep((ms) * 1000)
+#endif
 
 #include "arraylist.h"
+#include "matrix.h"
+#include "timer.h"
 
-int main()
-{
-    ArrayList list;
-    if(al_init(&list, 4) !=0 ) {
-        fprintf(stderr, "Failed to init ArrayList\n");
-        return 1;
-    }
+int main() {
+    int rows = 20; int cols = 10;
+    int **matrix = init_matrix(rows,cols);
+    int p_row = 0; int p_col = 0;
 
-    for(int i = 0; i < 10; i++) {
-        if(al_add(&list,i * 10) != 0 ) {
-            fprintf(stderr, "Failed to add element\n");
-            al_free(&list);
-            return 1;
+    time_t start_time = timer_init();
+    while(1) {
+        printf("\033[2J\033[1;1H");
+        update_matrix_index(matrix,p_row,p_col);
+        display_matrix(matrix,rows,cols);
+        while(1) {
+            if(timer_checker(&start_time,3) != 1) {
+                if(_kbhit()) {
+                char key = _getch();
+                    switch (key) {
+                        case 72: printf("UP pressed\n"); break;     // arrow up
+                        case 80: printf("DOWN pressed\n"); break;   // arrow down
+                        case 75: printf("LEFT pressed\n"); break;   // arrow left
+                        case 77: printf("RIGHT pressed\n"); break;  // arrow right
+                        case 27: return 0; // ESC key exits
+                        default: printf("Key: %d\n", key); break;
+                    }
+                start_time = timer_init();
+                }
+            } else {
+                printf("DOWN pressed\n");
+            }
         }
     }
-
-    for(size_t i =0; i < list.size; i++) {
-        int v;
-        al_get(&list,i, &v);
-        printf("%d",v);
-    }
-    printf("\n");
-
-    al_free(&list);
+    free_matrix(matrix,rows);
 
     return 0;
 }
+
+// printf("\033[2J\033[1;1H");

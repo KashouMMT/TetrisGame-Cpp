@@ -4,6 +4,8 @@ add_library(tetrislib STATIC)
 
 target_sources(tetrislib PRIVATE
   src/arraylist.c
+  src/matrix.c
+  src/timer.c
 )
 
 # This must point to lib/include
