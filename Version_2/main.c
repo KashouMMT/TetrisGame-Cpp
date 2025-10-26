@@ -24,22 +24,19 @@ int main() {
         printf("\033[2J\033[1;1H");
         update_matrix_index(matrix,p_row,p_col);
         display_matrix(matrix,rows,cols);
-        while(1) {
-            if(timer_checker(&start_time,3) != 1) {
-                if(_kbhit()) {
+        while(timer_checker(&start_time,3) != 1) {
+            if(_kbhit()) {
                 char key = _getch();
-                    switch (key) {
-                        case 72: printf("UP pressed\n"); break;     // arrow up
-                        case 80: printf("DOWN pressed\n"); break;   // arrow down
-                        case 75: printf("LEFT pressed\n"); break;   // arrow left
-                        case 77: printf("RIGHT pressed\n"); break;  // arrow right
-                        case 27: return 0; // ESC key exits
-                        default: printf("Key: %d\n", key); break;
-                    }
-                start_time = timer_init();
+                switch (key) {
+                    case 72: printf("UP pressed\n"); break;     // arrow up
+                    case 80: printf("DOWN pressed\n"); break;   // arrow down
+                    case 75: printf("LEFT pressed\n"); break;   // arrow left
+                    case 77: printf("RIGHT pressed\n"); break;  // arrow right
+                    case 27: return 0; // ESC key exits
+                    default: printf("Key: %d\n", key); break;
                 }
-            } else {
-                printf("DOWN pressed\n");
+                start_time = timer_init();
+                break;
             }
         }
     }
